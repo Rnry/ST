@@ -78,21 +78,3 @@ threads = [threading.Thread(target=philosopher, args=(i,)) for i in
 range(NUM_PHILOSOPHERS)]
 for t in threads:
     t.start()
-
-#Task 5 output:
-'''
-Philosopher 0: Avg Thinking Time = 0.33431265904353213s, Avg Eating Time = 0.45732890642606294s
-Philosopher 1: Avg Thinking Time = 0.2846822371849647s, Avg Eating Time = 0.5677898663740891s
-Philosopher 2: Avg Thinking Time = 0.26495649264408994s, Avg Eating Time = 0.4615902533897987s
-Philosopher 3: Avg Thinking Time = 0.3437967300415039s, Avg Eating Time = 0.5304339298835168s
-Philosopher 4: Avg Thinking Time = 0.30418073214017427s, Avg Eating Time = 0.5044113122499906s
-Philosopher 5: Avg Thinking Time = 0.3297857871422401s, Avg Eating Time = 0.5269032991849459s
-Philosopher 6: Avg Thinking Time = 0.268082306935237s, Avg Eating Time = 0.5432999684260442s
-Philosopher 7: Avg Thinking Time = 0.2781997277186467s, Avg Eating Time = 0.5300878011263334s
-Philosopher 8: Avg Thinking Time = 0.31453789197481596s, Avg Eating Time = 0.5165378313798171s
-Philosopher 9: Avg Thinking Time = 0.29631913625277007s, Avg Eating Time = 0.491009363761315s
-'''
-
-#Task 6: The arbiter approach ensures fairness by preventing starvation but may slightly reduce throughput due 
-#to controlled access to forks. The fork-ordering approach allows higher throughput but can lead to starvation 
-#if unlucky philosophers keep missing their turn.
