@@ -1,3 +1,4 @@
+'''Eating philosophers problem'''
 import threading
 import time
 import random
@@ -16,6 +17,7 @@ eating_counts = {i: 0 for i in range(NUM_PHILOSOPHERS)}
 
 
 def philosopher(id):
+    '''Give forks to philosophers in specific conditions'''
     global eaten_philosophers
     global thinking_times
     global eating_times
@@ -74,7 +76,7 @@ def philosopher(id):
         for i in range(NUM_PHILOSOPHERS):
             avg_think = thinking_times[i] / thinking_counts[i] if thinking_counts[i] > 0 else 0
             avg_eat = eating_times[i] / eating_counts[i] if eating_counts[i] > 0 else 0
-            print(f"Philosopher {i}: Avg Thinking Time = {avg_think}s, Avg Eating Time = {avg_eat}s")
+            print(f"Philosopher {i}: Avg Thinking t = {avg_think}s, Avg Eating t = {avg_eat}s")
 
 
 threads = [threading.Thread(target=philosopher, args=(i,)) for i in range(NUM_PHILOSOPHERS)]
